@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+        #orario{position: fixed;
+            background-color: rgb(186, 22, 22);
+            color: white;
+            border: none;
+            height: 2.8rem;
+            width: 5rem;
+            outline: none;
+            font-family: serif;
+            line-height: 2.8rem;
+            font-size: 1.2rem;
+            animation: 40s infinite animazioneorologio;
+            font-weight: 500;
+            text-align: center;
+            top: 0.5rem; 
+            left: 5.6rem; 
+            border: 0.5px sodivd rgb(43, 43, 43);
+            z-index: 10;         
+        }
+        @keyframes animazioneorologio{
+            0% {background : red; color: white; box-shadow: 0 0 10px red;}
+            6%{background: fuchsia; color: white; box-shadow: 0 0 10px fuchsia;}
+            19%{background: blue; color: white; box-shadow: 0 0 10px blue;}
+            32%{background: lightblue; color: black; box-shadow: 0 0 10px lightblue;}
+            44%{background: greenyellow; color: black; box-shadow: 0 0 10px greenyellow;}
+            57%{background: green; color: white; box-shadow: 0 0 10px green;}
+            70%{background: yellow; color: black; box-shadow: 0 0 10px yellow;}
+            82%{background: orange; color: white; box-shadow: 0 0 10px orange;}
+            94%{background: red; color: white; box-shadow: 0 0 10px red;}
+            100%{background: red; color: white; box-shadow: 0 0 10px red;}
+        }
+        body{
+            margin: 0;
+            padding: 1rem;
+            animation: 40s infinite orologio2;
+            background: #dcdcdc;
+            position: relative;
+        }
+        html,body{ margin-top: -0.70rem;
+            height: 150rem;
+        }
+        @keyframes orologio2{
+            0% {background: darkred;}
+            6%{background: darkorchid;}
+            19%{background: rgb(0, 0, 68);}
+            32%{background: rgb(32, 156, 178);}
+            44%{background: green;}
+            57%{background: darkgreen;}
+            70%{background: darkkhaki;}
+            82%{background: darkgoldenrod;}
+            94%{background: darkred;}
+            100%{background: darkred;}
+        }
+        #risparmio,#risparmio2{
+            height: 1.4rem;
+            color: white;
+            background: rgb(186, 22, 22);
+            margin: 0;
+            padding: 0;
+            border: none;
+            width: 4.5rem;
+            font-size: 0.5rem;
+            position: fixed;
+            left: 0.5rem;
+            border: 0.1px solid rgb(0, 0, 0);
+        }
+        #risparmio{
+            top: 0.5rem;
+            z-index: 10;
+        }
+        #risparmio2{
+            animation: 40s infinite animazioneorologio;
+            top: 1.9rem;
+            z-index: 9;
+        }
+        #slideshow{
+            position: absolute;
+            top: 6rem;
+            left: 5%;
+            width: 80%;
+            height: 50ch;
+        }
+        #slideshow >div{
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition:opacity 0.5s;
+            position: absolute;
+        }
+        #slideshow > div.slide.hidden{
+                opacity:0;
+        }
+        #sdivdeshow > div.slide.visible{
+                opacity:1;
+        }
+        #idfocus{
+            max-height: 1.1rem;
+            max-width: 60%;
+        }
+        #navigazione{
+            position: fixed;
+            overflow: hidden;
+            height: 3.5rem;
+            top: 0;
+            right: 0;
+            left: 0;
+            background: rgba(216, 65, 65, 0.726);
+            z-index: 9;
+        }
+        #sfondobarratrova{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin: 1rem;
+            
+        }
+        #idinput{
+            font-size: 1rem;
+        }
+        .rlrank{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(10rem,1fr));
+            gap: 0.25rem;
+            margin: 0.5rem;
+        }
+        .schedarlrank{
+            border: 1px solid black;
+            background: rgb(255, 255, 255);
+        }
+        .rank{
+            margin-bottom:  0.25rem;
+        }
+        .percentuale{
+            font-size: 0.8rem;
+        }
+        .nascosto{display: none;}
+        .visibile{display:contents;}
+        #graficavalidatore{
+            height: 5rem;
+            width: 15rem;
+            text-align: center;
+            color: white;
+            margin: 0 auto;
+            background: lightcoral;
+            padding: 0.5rem 1rem;
+        }
+        #graficavalidatore>p{
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        #èvalido{
+            color: black;
+            font-weight: 900;
+        }  
+        .bg{
+            color: gray;
+            background: black;
+            padding: 0.8rem 0;
+            max-width: 60%;
+            text-align: center;
+            margin-left: 25%;
+            margin-bottom: 1rem;
+            margin-top: 1rem
+        }   
+        #contenitoreanimazionejs{
+            width: 80%;
+            height: 10rem;
+            text-align: center;
+            background: yellow;
+            position: relative;
+            margin: 0 auto;
+        }
+        #animazionejs{
+            background: red;
+            width: 5%;
+            height: 10%;
+            position: absolute;
+            right: 0rem;
+        }
+        #tabella{
+            margin: 0 auto;  
+            width: 90%; 
+            position: relative;
+        }
+        #tabella th{
+            padding: 1rem;
+            width: 10rem;
+        }
+        #lordo{
+            position:absolute;
+            top: 84.8rem;
+            left: 12.55rem;
+        }
+        #tasse{
+            position: absolute;
+            top: 88.2rem;
+            left: 12.55rem;
+        }
+        #lordo,#tasse{
+            width: 8.45rem;
+            height: 3.1rem;
+            background: none;
+            border: 1px solid rgb(124, 124, 124);
+            z-index: 100;
+            text-align: center;
+        }
+        .bottone{
+            height: 1.5rem;
+            margin: 0 auto;
+            display: block;
+            margin-top: 2rem;
+            color: white;
+            background: linear-gradient(to right bottom,black,blue);
+            border: 0.5px black solid;
+        }
+        #divonblur{
+            height: 2rem;
+            width: 14rem;
+            background: red;
+            padding-left: 1rem;
+            padding-right: 0;
+            border: none;
+        }
+        #seleziona{
+            display: block;
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+<body onafterprint="alertpostprint()" onbeforeprint="alertpreprint()" onbeforeunload="alertprequit()">
+<script>
+    function alertpostprint(){
+        alert("hai stampato la pagina")
+    }
+    function alertpreprint(){
+        console.log("bomba ragazzi")
+    }
+    function alertprequit(){
+        alert("non uscire pls")
+    }
+</script>
+<script src="document.js"></script>
+<script>
+    function orologia() {
+            var orologio0 = new Date();
+            var orologio1 = orologio0.getHours();
+            var orologio2 = orologio0.getMinutes();
+            var orologio3 = orologio0.getSeconds();
+            if(orologio1<10){orologio1 = "0" + orologio1};
+            if(orologio2<10){orologio2 = "0" + orologio2};
+            if(orologio3<10){orologio3 = "0" + orologio3};
+            document.getElementById("orario").innerHTML = orologio1+':'+orologio2+':'+orologio3
+        } setInterval(orologia,1000)//aggiorna la funzione orologio ogni 1000ms    
+</script>
+    <script>
+        function risparmioE(){
+            var orologio = document.getElementById("orario");
+            let sfondo = document.getElementsByTagName("BODY")[0];
+            let risparmiosecondo = document.getElementById("risparmio2");
+                if(orologio.style.animation = " 40s infinite animazioneorologio"){
+                orologio.style.animation= "none";
+                sfondo.style.animation = "none";
+                risparmiosecondo.style.animation = "none";
+                }   
+        }   
+    </script>
+    <script>
+        function risparmioB(){
+            var orologio = document.getElementById("orario");
+        var sfondo = document.getElementsByTagName("body");
+        var risparmiosecondo = document.getElementById("risparmio2");
+            orologio.style.animation = " 40s infinite animazioneorologio";
+            document.getElementsByTagName("body")[0].style.animation = " 40s infinite orologio2";
+            risparmiosecondo.style.animation = " 40s infinite animazioneorologio";}  
+            /*windows + l per bloccare il pc
+        windows + d per visuadivzzare e nascondere il desktop
+        F2 per rinominare l'elemento selezionato
+        F3 per cercare un file o cartella in Esplora file
+        F4 per divsuadivzzare l'elenco della barra degdiv indirizzi in Esplora file
+        F5 per aggiornare la finestra attiva
+        F6 per scorrere gdiv elementi della schermata in una finestra o sdiv desktop.
+        F10 per Attivare la barra dei menu nell'app attiva.
+        ALT + F8 per Mostrare la password nella schermata di accesso.
+        ALT + ESC per Scorrere gdiv elementi nell'ordine con cui sono stati aperti su esplora file.
+        ALT + INVIO per Visuadivzzare le proprietà per l'elemento selezionato su esplora file.
+        ALT + freccia SINISTRA per Torna indietro su esplora file e alcuni software come in google
+        ALT + freccia DESTRA per Andare avanti su esplora file e alcuni softwaresu esplora file e alcuni software */
+    </script>
+    <div id="navigazione"></div>
+    <button id= "risparmio" onclick="risparmioE()">risparmio energetico</button>
+    <button id= "risparmio2" onclick="risparmioB()">modalità luci</button>
+    <div id="orario"></div>
+    <div>notturna</div>
+    <div id="slideshow">
+        <div class="slide" style="background-image:url('immagini/Cicciogamer89.png')"></div>
+        <div class="slide" style="background-image:url('immagini/Cicciogamergentleman.png')"></div>
+        <div class="slide" style="background-image:url('immagini/Cicciogamer89\ dio.jpg')"></div>
+        <div class="slide" style="background-image:url('immagini/Cicciogamer89\ ladri\ in\ casa.jpg')"></div>
+        <div class="slide" style="background-image:url('immagini/Cicciogamerfortnite.jpg')"></div>
+        <div class="slide" style="background-image:url('immagini/Cicciosorpreso.jpg')"></div>
+        <div class="slide" style="background-image:url('immagini/Cicciogamerfortnite.jpg')"></div>
+    </div>
+    <div style="margin-top: 33rem;"></div>
+    <script>
+        let slides= document.querySelectorAll("#slideshow > div.slide")
+        let num=-1
+        function nextSlide(){
+            slides.forEach((s)=>{
+                s.classList.remove("visible")
+                s.classList.add("hidden")
+            })
+            num++
+            if(num>=slides.length) num=0
+            slides[num].classList.remove("hidden")
+            slides[num].classList.add("visible")
+            setTimeout(nextSlide,5000)
+        }
+        nextSlide()
+    </script>
+    <div style="margin-bottom: 2rem;"></div>
+    <div id="sfondobarratrova">
+        <label for="idinput">Scopri quanto è raro il tuo rank!</label>
+    <input type="text" id= "idinput" placeholder="inserisci qui il tuo rank" ></input>
+    <button style="display: none;" onclick=""></button>
+    </div>
+    <div class="rlrank">
+        <div class="schedarlrank">
+            <div id= "bronzo" class="rank">bronzo</div>
+            <div class="percentuale">90%</div>
+        </div>
+    </div>
+    <div class="rlrank">
+        <div class="schedarlrank">
+            <div class="rank argento">argento</div>
+            <div class="percentuale">70%</div>
+        </div>
+    </div>
+    <div class="rlrank">
+        <div class="schedarlrank">
+            <div class="rank">oro</div>
+            <div class="percentuale">40%</div>
+        </div>
+    </div>
+    <div id="graficavalidatore">
+        <p>scrivi un numero da 1 a 10</p>
+        <input id="valida">
+        <button type="submit" onclick="validatore()">
+            invio
+        </button>
+        <p id="èvalido"></p>
+            <script>
+                function validatore(){
+                    let x = document.getElementById("valida").value;
+                    let text;
+                    if (isNaN(x) || x < 1 || x > 10){//se è compreso tra uno e dieci...
+                        text = "sbagliato"
+                    }else{text = "giusto"}
+                    document.getElementById("èvalido").innerHTML = text
+                }
+            </script>
+    </div>
+    <p class="hide bg"></p>
+    <div id="idfocus" class="bg"></div>
+    <br>
+    <div id="contenitoreanimazionejs">
+        <p>animazione fatta con js</p>
+        <div id="animazionejs">
+        </div>
+    </div>
+    <br>
+    <button class="bg" style="border: none; padding-left: 0.6rem;padding-right: 0.6rem;" onclick="hiddenwiki()"> Apri hiddenwiki</button>
+    <button class="bg" style="border: none; padding-left: 0.6rem;padding-right: 0.6rem;" onclick="hiddenwikiclose()">chiudi hiddenwiki</button>
+    <br>
+    <table border="1" id="tabella">
+        <th>stipendio lordo</th>
+        <input type="text" id="lordo"></input>
+        </tr>
+        <tr>
+        <th>tassazione</th>
+        <input type="text" id="tasse"></input>
+        </tr>
+        <tr>
+        <th>stipendio netto</th>
+        <th id="netto"></th>
+        </tr>
+    </table>
+    <script>
+        function risultato(){
+        let lrd = document.getElementById("lordo").value
+        let tss = document.getElementById('tasse').value/100
+        let ntt = document.getElementById('netto')
+        ntt.innerHTML = lrd - lrd*tss
+        }
+        setInterval(risultato,1000)
+    </script>
+    <script>
+    function animazionidijs(){
+    function animazionedijs() {
+        let id = null;
+        const idanimazionejs = document.getElementById("animazionejs");
+        let posizione = 0;
+        clearInterval(id);
+        id = setInterval(frame, 10);
+        function frame() {
+            if (posizione == 145) {
+            clearInterval(id);
+            } else {
+            posizione++;
+            idanimazionejs.style.top = posizione + 'px';
+            idanimazionejs.style.left = posizione*1.5 + 'px';//animazione da alto a sinistra a basso a destra
+            }
+        }
+        }
+        function animazionedijs2(){
+        let id = null;
+        const idanimazionejs = document.getElementById("animazionejs");
+        idanimazionejs.style.top = 145 + 'px';
+        idanimazionejs.style.left = 145*1.5 + 'px';
+        let posizione = 145;
+        clearInterval(id);
+        id = setInterval(frame, 10);
+        function frame() {
+            if (posizione == 0) {
+            clearInterval(id);//se posizione è 145 l'intervallo settato viene cancellato ed il rettangolo resta fermo
+            } else {
+            posizione--;
+            idanimazionejs.style.top = posizione + 'px';
+            }
+        }
+    }
+    function animazionedijs3(){
+        let id = null;
+        const idanimazionejs = document.getElementById("animazionejs");
+        idanimazionejs.style.left = 218 + 'px';
+        let posizione = 218;
+        clearInterval(id);
+        id = setInterval(frame, 10);
+        function frame() {
+            if (posizione == 0) {
+            clearInterval(id);
+            } else {
+            posizione--;
+            idanimazionejs.style.left = posizione + 'px';
+            }  
+        }
+    }
+    animazionedijs()
+    setTimeout(animazionedijs2,3000)
+    setTimeout(animazionedijs3,6000)
+}
+    animazionidijs()
+   setInterval(animazionidijs, 9000) 
+    </script>
+    <br>
+    <button onclick="ripetipunti()"></button>
+    <input type="text" id="punteggio">
+    <button onclick="stoppapunti()"></button>
+    <button style="display: block; margin-left:  5.5rem; height: 2rem; width: 2rem; margin-top: 1rem; background: blue; border: 0;"
+    onclick="puliscipunti()"></button>
+    <button class="bottone" onclick="window.print()">stampa la pagina cliccando qui</button>
+    <br>
+    <input type="script" id="divonblur" onblur="cambiocolorediv()">questo div cambia colore con js</input> 
+    <script>
+        rpst = 0;
+        function cambiocolorediv(){//serve per gli input text sopratutto
+        document.getElementById("divonblur").style.background = "white"
+        rpst = 1
+            if(rpst = 1){
+                setTimeout(ripristinocolorediv,3000)
+                function ripristinocolorediv(){
+            document.getElementById("divonblur").style.background = "red"
+            rpst = 0}
+
+        }        
+    }
+    </script>
+    <br>   
+    <!--html event dom-->
+    <!--onchange-->
+    <select id="select" onchange="selectbg()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <script>
+        function selectbg(){
+            document.getElementById("select").style.background = "red"
+            function myfunction(){
+                document.getElementById("select").style.background = "white"
+            }
+            setTimeout(myfunction,1000)
+        }
+    </script>
+    <!--oncopy, oncut e onpaste-->
+    <input id="copycut" value="copiami,tagliami e poi incolla qualcosa"type="text" oncopy="copiato()" oncut="tagliato()" onpaste="incollato()">
+    <script>
+        function copiato(){
+            document.getElementById("copycut").style.background = "red"
+        }
+        function tagliato(){
+            document.getElementById("copycut").style.color = "blue"
+        }
+        function incollato(){
+            document.getElementById("copycut").style.height = "5rem"   
+        }
+    </script>
+    <!--dbclick-->
+    <img id="doubleclickpage" style="display:block;margin: 0 auto"ondblclick="dbclickpage()" src="immagini/Cicciogamerfortnite.jpg">doppio click per vedere cosa succede</img>  
+    <script>
+        function dbclickpage(){
+            document.getElementById("doubleclickpage").style.filter= "saturate(200%)"
+        }
+    </script>
+    <br>
+    <p>Scegli il tema della poesia e premi il pulsante per vedere il risultato!</p>
+    <div style="background: rgba(255, 0, 0, 0.274); padding: 1rem;">
+        <select id="seleziona" style="margin-top: 0">
+        <option value="1" id="fonait">fonait</option>
+        <option value="2" id="roblox">roblox</option>
+        <option value="3" id="maincraft">maincraft</option>
+    </select>
+    <button onclick="fonait()" style="border: 1px solid black; background: white; margin-top: 0rem;margin-bottom : 1rem;">conferma opzione</button>
+    <div id="testogioco" style="background: darkgrey"></div>
+    </div>
+    <script>
+    function fonait(){
+    let x = document.getElementById("fonait").selected;
+    let y = document.getElementById("roblox").selected;
+    let z = document.getElementById("maincraft").selected;
+    if(x == true && y == false && z == false){
+    document.getElementById("testogioco").innerHTML = "fonait badol pes aiv gias scit at mai ess"
+     } else if(y == true && z == false){
+        document.getElementById("testogioco").innerHTML = "its raining tacos nonituguaspai"
+     }  else{
+        document.getElementById("testogioco").innerHTML = "maincraft da ba de da ba da"
+     }
+    }
+    </script>
+    <script>
+    //html DOM
+    //selettori di html con document
+    //getElementById
+    let bronzo = document.getElementById("bronzo")//id con nome bronzo
+    bronzo.style.color= "#cd7f32";//id bronzo ha colore rosso
+    //getElementByClassName
+    let argento = document.getElementsByClassName("argento")//è un array e non puoi usare style
+    for (let i = 0; i < argento.length; i++)//crea un loop su qualsiasi item dell'indice di argento 
+    {argento[i].style.color = "#c0c0c0"}//su un singolo carattere style funziona
+    //getElementByTagName
+    let link = document.getElementsByTagName("a");
+    //link[0].style.textDecoration = "none";//il primo link non ha la sottoliniatura 
+    //querySelectorAll()
+    let paragrafinascosti = document.querySelectorAll("p.hide");
+    paragrafinascosti[0].innerHTML =  "nascondilo!!";//il primo paragrafo con classe hide è rosso, non puoi usare style
+    //scopri informazioni sulla pagina
+    //domain
+    document.write('questo è il dominio della pagina: ' + document.domain)//indica il dominio della pagina
+    //title
+    let iltitolo = document.title
+    console.log(iltitolo)//mostra il titolo dell'html
+    //cookie
+    console.log(document.cookie)//questa pagina non ha cookie
+    //doctype
+    console.log(document.doctype)//indica il doctype della pagina (html)
+    //hasFocus()
+    function focusconsole(){
+    let focus;//focus si intende l'ultima pagina dove hai effettuato un click 
+    if(document.hasFocus()){focus = 'hai il focus su questa pagina'}
+    else{focus = 'non hai il focus su questa pagina'}
+    document.getElementById("idfocus").innerHTML = focus}//viene scritto se ha focus o no
+    setInterval(focusconsole,1)//ogni 1 millisecondo si aggiorna la funzione
+    
+    //selettori di html di window
+    //conosole 
+    console.log("ciao")//scrivere qualcosa sulla console
+    //alert - mette un allert
+    //window.lenght
+    console.log(window.length)//numero di frame e iframe nella pagina
+    //open
+    let wikinascosto;
+    function hiddenwiki(){
+        wikinascosto = window.open("https://thehiddenwiki.org/");  
+    }//apre un'altra finestra
+    //close
+    function hiddenwikiclose(){
+        wikinascosto.close();
+    }
+    //blur e focus
+    //setInterval
+    function settalintervallo(){//setInterval funziona con le funzioni
+     console.log("c")  
+    }
+    setInterval(settalintervallo,2000)//ogni 2secondi fai la funzione
+    //setTimeOut
+    function settailtempo(){//setTimeOut funziona solo con le funzioni
+     console.log("il tempo passa")
+    }
+    setTimeout(settailtempo,3000)//la funzione si attiva solo dopo 3 secondi
+    //clearInterval
+    //vedi l'animazione di js
+    //clearTimeOut
+    let valoreriquadropunti = 0;
+    let tempoOn = 0;
+    function punteggio(){ 
+    document.getElementById("punteggio").value = valoreriquadropunti;
+    valoreriquadropunti++  
+    punti = setTimeout(punteggio,1000);
+    }
+    function ripetipunti(){
+        if (tempoOn == 0){
+            tempoOn = 1;
+            punteggio();}
+    }
+    function stoppapunti(){
+        clearTimeout(punti)
+        tempoOn = 0
+    }
+    function puliscipunti(){
+        clearInterval(punti)
+        tempoOn = 0
+    }//si può usare anche clearInterval ma esso non viene riconosciuto da tutti i browser
+    //addEventListener
+    
+    //removeEventListener
+    </script>   
+</body>
+</html>
